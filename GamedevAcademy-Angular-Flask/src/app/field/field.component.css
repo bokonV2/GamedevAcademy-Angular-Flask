@@ -1,0 +1,47 @@
+
+input{
+  border-color:  (borderColor) ;
+}
+.field_container{
+  margin-bottom: 16px;
+  position: relative;
+}
+.field_container label {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #101D2D;
+}
+
+.field_container input {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #6F727A;
+
+  width: calc(100% - 16px * 2 - 1px);
+  height: calc(16px * 2);
+  padding: 8px 16px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+}
+
+.field_container input:focus-visible {
+  outline: none;
+  border: 1px solid #bdbdbd;
+}
+
+.ico {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 8px;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  color: #4C54F4;
+}

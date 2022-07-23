@@ -1,0 +1,5 @@
+<div class="alerts_hide" id="alerts">
+  <span [style.color]="obj.color" class="material-symbols-outlined noselect alerts_icon">{{ obj.icon }}</span>
+  <span [style.borderColor]="obj.color">{{ obj.message }}</span>
+  <span class="material-symbols-outlined noselect alerts_close" (click)="closeAlerts()">close</span>
+</div>
