@@ -1,0 +1,53 @@
+<div class="logo">
+  <img src="\assets\logo.png" alt="Logo">
+</div>
+
+<form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+  >
+  <h1>Добро пожаловать</h1>
+  <h4>Авторизуйтесь чтобы продолжить</h4>
+  <div class="field">
+    <span class="title">Логин*</span>
+    <div class="field container">
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="email@hots.com"
+      >
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="ico">
+        <span style='color: red' class="material-symbols-outlined noselect">info</span>
+      </div>
+      <div *ngIf="email.valid && (email.dirty || email.touched)" class="ico">
+        <span style='color: green' class="material-symbols-outlined noselect">done</span>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <span class="title">Пароль*</span>
+    <div class="field container">
+      <input
+        type="{{ visiblePassword }}"
+        formControlName="password"
+        placeholder="Не менее 8 символов"
+      >
+      <div class="ico">
+        <span (click)="changeVisibl($event)" class="material-symbols-outlined noselect">visibility</span>
+      </div>
+    </div>
+  </div>
+  <div class="bottom_line">
+    <div class="checkbox">
+      <input formControlName="mind" class="custom-checkbox" type="checkbox" id="mind" #mind>
+      <label for="mind">Запомнить</label>
+    </div>
+    <a routerLink="/asdas">Забыли пароль?</a>
+  </div>
+  <input
+    type="submit"
+    value="Войти"
+    [disabled]="form.invalid || form.disabled"
+  >
+</form>
+<app-alerts [switch]="this.alerts"></app-alerts>
